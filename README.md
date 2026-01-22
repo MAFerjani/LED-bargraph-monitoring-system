@@ -106,6 +106,22 @@ Built with **FreeRTOS** for concurrent task execution and **interrupt-driven but
 5. Set upload speed: 115200
 6. Upload and open Serial Monitor at 115200 baud
 
+### Online Simulation (Wokwi)
+
+You can run this project directly in the browser using the Wokwi simulator:
+
+**[Run in Wokwi Simulator](https://wokwi.com/projects/453810903659593729)**
+
+> **Note:** All features work correctly in the simulator except for the 10-second light sleep duration. When entering sleep mode (via the `SLEEP` command or Button 3), the system enters sleep correctly but wakes up earlier than 10 seconds due to the simulator's watchdog timer limitations. On real ESP32 hardware, the full 10-second sleep works as expected.
+
+---
+
+## Circuit Schematic
+
+![Circuit Schematic](schematic_diagram.png)
+
+*Circuit diagram showing ESP32 connections with DHT22 sensor, 5-LED bargraph, potentiometer, and push buttons.*
+
 ---
 
 ## Usage
@@ -315,18 +331,24 @@ When enabled (Button 3 or serial command), the system:
 ```
 Micro_project_EE535/
 ├── src/
-│   └── main.cpp          # Main firmware source
+│   └── main.cpp              # Main firmware source
 ├── include/
-│   └── README            # PlatformIO include folder docs
+│   └── README                # PlatformIO include folder docs
 ├── lib/
-│   └── README            # PlatformIO library folder docs
+│   └── README                # PlatformIO library folder docs
 ├── test/
-│   └── README            # PlatformIO test folder docs
-├── platformio.ini        # PlatformIO configuration
-├── micro_project.txt     # Project specification
+│   └── README                # PlatformIO test folder docs
+├── platformio.ini            # PlatformIO configuration
+├── schematic_diagram.png     # Circuit schematic (Wokwi)
+├── micro_project.txt         # Project specification
 ├── micro_project_report.tex  # LaTeX technical report
-└── README.md             # This file
+└── README.md                 # This file
 ```
+
+## Online Resources
+
+- **Live Simulation**: [Wokwi Project](https://wokwi.com/projects/453810903659593729) - Run and test the circuit in your browser
+- **Repository**: [GitHub](https://github.com/MAFerjani/LED-bargraph-monitoring-system.git)
 
 ---
 
@@ -345,11 +367,3 @@ Micro_project_EE535/
 ## License
 
 This project was developed for the EE535 Microcontrollers course at the Faculty of Electrical and Electronic Engineering, Tripoli.
-
----
-
-## Author
-
-**Muhammed Ali Muftah**  
-Student ID: 2200208982  
-Instructor: Eng. Ramadan Altuiby
